@@ -33,6 +33,21 @@ elixir(function(mix) {
         'admin/moris.min.js',
         'admin/moris-data.js'
         
-    ],'./public/js/admin.js');
+    ],'./public/js/admin.js')
+
+
+    .scripts([
+
+        'admin/jquery.js',
+        'admin/bootstrap.min.js',
+        'admin/plugins/morris/raphael.min.js',
+        'admin/plugins/morris/morris.min.js',
+        'admin/plugins/morris/morris-data.js',
+        'admin/plugins/morris/raphael.min.js'
+
+
+        ],'public/css/charts/morris.js')
+
+    .scriptsIn('admin/plugins/flot','public/css/charts/flot.js');
 
 });

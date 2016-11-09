@@ -29,6 +29,10 @@ Route::get('/admin', function(){
 
 	return view('admin.index');
 });
+Route::get('/admin/charts', function(){
+
+	return view('admin.charts');
+});
 
 
 
