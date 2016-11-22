@@ -25,14 +25,38 @@ Route::get('/test', function(){
 	return view('ecom');
 });
 
-Route::get('/admin', function(){
+// Route::get('/admin', function(){
 
-	return view('admin.index');
-});
-Route::get('/admin/charts', function(){
+// 	return view('admin.index');
+// });
+// Route::get('/admin/charts', function(){
 
-	return view('admin.charts');
+// 	return view('admin.charts');
+// });
+
+Route::group(['middleware'=>'admin'],function(){
+
+		Route::get('/admin',['as'=>'admin_dashboard','uses'=>'AdminHomeController@index']);
+
+		Route::resource('/admin/orders','AdminOrdersController');
+
+		Route::resource('/admin/products','AdminProductsController');
+
+		Route::get('admin/products/draft','AdminProductsController@draft');
+
+		Route::resource('/admin/reports','AdminReportsController');
+
+		Route::resource('/admin/media','AdminMediaController');
+
+		Route::resource('admin/categories','AdminCategoriesController');
+
+		Route::resource('admin/users','AdminUsersController');
+
+
+
 });
+
+
 
 
 

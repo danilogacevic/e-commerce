@@ -46,8 +46,16 @@ elixir(function(mix) {
         'admin/plugins/morris/raphael.min.js'
 
 
-        ],'public/css/charts/morris.js')
+        ],'public/js/charts/morris.js')
 
-    .scriptsIn('admin/plugins/flot','public/css/charts/flot.js');
+    .scripts([
+
+        'admin/plugins/flot/flot-data.js',
+        'admin/plugins/flot/jquery.flot.js',
+        'admin/plugins/flot/jquery.flot.pie.js',
+        'admin/plugins/flot/jquery.flot.resize.js',
+        'admin/plugins/flot/jquery.flot.tooltip.min.js'
+
+        ],'public/js/charts/jquery-flot.js');
 
 });

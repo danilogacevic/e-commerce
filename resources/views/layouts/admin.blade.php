@@ -13,7 +13,14 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/admin.css')}}" rel="stylesheet">
-    <link href="@yield('styles')" rel="stylesheet">
+    <!-- <link href="@yield('styles')" rel="stylesheet"> -->
+
+    @yield('styles')
+
+
+    <!-- Custom Fonts -->
+    
+    @yield('fonts')
 
     
 
@@ -147,40 +154,36 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="{{route('admin_dashboard')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="{{route('orders.index')}}"><i class="fa fa-fw fa-bar-chart-o"></i>Orders</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="{{route('reports.index')}}"><i class="fa fa-fw fa-table"></i>Reports</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="{{route('products.index')}}"><i class="fa fa-fw fa-edit"></i>View products</a>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="{{route('products.create')}}"><i class="fa fa-fw fa-desktop"></i>Add product</a>
                     </li>
                     <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                        <a href="{{route('categories.index')}}"><i class="fa fa-fw fa-wrench"></i>Categories</a>
                     </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                   
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Users<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="{{route('users.index')}}">All users</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="{{route('users.create')}}">Add user</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -189,6 +192,17 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
+
+              <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard
+                        </h1>
+                      
+                    </div>
+                </div>
+                <!-- /.row -->
 
               @yield('content')
 
@@ -203,6 +217,9 @@
 
     <!-- jQuery -->
     <script src="{{asset('js/admin.js')}}"></script>
+    
+    @yield('scripts')
+   
 
  
 
